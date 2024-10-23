@@ -1,1 +1,3 @@
 databaseChangeLog:
+  - include:
+      file: db/migrations/20241023130012_create_table_user.yml

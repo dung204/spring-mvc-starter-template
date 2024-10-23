@@ -1,0 +1,50 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1729688516520-1
+      author: dung204
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: usersPK
+                  name: id
+                  type: VARCHAR(255)
+              - column:
+                  name: address
+                  type: VARCHAR(255)
+              - column:
+                  name: email
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: first_name
+                  type: VARCHAR(255)
+              - column:
+                  name: gender
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: last_name
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: password
+                  type: VARCHAR(255)
+              - column:
+                  name: role
+                  type: VARCHAR(255)
+            tableName: users
+  - changeSet:
+      id: 1729688516520-2
+      author: dung204
+      changes:
+        - addUniqueConstraint:
+            columnNames: email
+            constraintName: UC_USERSEMAIL_COL
+            tableName: users
